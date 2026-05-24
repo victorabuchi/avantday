@@ -197,7 +197,7 @@ mod tests {
 
   const DELTA_STR: &str = r#"[
     {
-        "insert": "\n👋 Welcome to AppFlowy!"
+        "insert": "\n👋 Welcome to Avantday!"
     },
     {
         "insert": "\n",
@@ -359,7 +359,7 @@ mod tests {
         }
     },
     {
-        "insert": " at the bottom right for help and support.\n\nLike AppFlowy? Follow us:"
+        "insert": " at the bottom right for help and support.\n\nLike Avantday? Follow us:"
     },
     {
         "insert": "\n",
@@ -368,7 +368,7 @@ mod tests {
         }
     },
     {
-        "insert": "GitHub: https://github.com/AppFlowy-IO/appflowy"
+        "insert": "GitHub: https://github.com/Avantday-IO/avantday"
     },
     {
         "insert": "\n",
@@ -377,7 +377,7 @@ mod tests {
         }
     },
     {
-        "insert": "Twitter: https://twitter.com/appflowy"
+        "insert": "Twitter: https://twitter.com/avantday"
     },
     {
         "insert": "\n",
@@ -386,7 +386,7 @@ mod tests {
         }
     },
     {
-        "insert": "Newsletter: https://www.appflowy.io/blog"
+        "insert": "Newsletter: https://www.avantday.io/blog"
     },
     {
         "insert": "\n",
@@ -422,9 +422,9 @@ mod tests {
         }
     },
     {
-        "insert": "appflowy",
+        "insert": "avantday",
         "attributes": {
-            "link": "https://www.appflowy.io/"
+            "link": "https://www.avantday.io/"
         }
     }
 ]"#;

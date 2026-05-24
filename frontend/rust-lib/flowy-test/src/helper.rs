@@ -28,7 +28,7 @@ impl ViewTest {
   pub async fn new(sdk: &FlowySDKTest, layout: ViewLayoutTypePB, data: Vec<u8>) -> Self {
     let workspace = create_workspace(sdk, "Workspace", "").await;
     open_workspace(sdk, &workspace.id).await;
-    let app = create_app(sdk, "App", "AppFlowy GitHub Project", &workspace.id).await;
+    let app = create_app(sdk, "App", "Avantday GitHub Project", &workspace.id).await;
     let view = create_view(sdk, &app.id, layout, data).await;
     Self {
       sdk: sdk.clone(),
@@ -136,11 +136,11 @@ pub fn root_dir() -> String {
 }
 
 pub fn random_email() -> String {
-  format!("{}@appflowy.io", nanoid!(20))
+  format!("{}@avantday.io", nanoid!(20))
 }
 
 pub fn login_email() -> String {
-  "annie2@appflowy.io".to_string()
+  "annie2@avantday.io".to_string()
 }
 
 pub fn login_password() -> String {

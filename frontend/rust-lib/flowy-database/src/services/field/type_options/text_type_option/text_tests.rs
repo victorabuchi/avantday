@@ -41,7 +41,7 @@ mod tests {
   }
   /*
   - [Unit Test] Testing the switching from Multi-selection type to Text type
-  - Tracking : https://github.com/AppFlowy-IO/AppFlowy/issues/1183
+  - Tracking : https://github.com/Avantday-IO/Avantday/issues/1183
    */
   #[test]
   fn multiselect_to_text_type() {

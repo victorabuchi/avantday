@@ -302,7 +302,7 @@ impl DatabaseViewRevisionPad {
 
   /// Returns the settings for the given layout. If it's not exists then will return the
   /// default settings for the given layout.
-  /// Each [database view](https://appflowy.gitbook.io/docs/essential-documentation/contribute-to-appflowy/architecture/frontend/database-view) has its own settings.
+  /// Each [database view](https://avantday.gitbook.io/docs/essential-documentation/contribute-to-avantday/architecture/frontend/database-view) has its own settings.
   pub fn get_layout_setting<T>(&self, layout: &LayoutRevision) -> Option<T>
   where
     T: serde::de::DeserializeOwned,

@@ -14,12 +14,12 @@ async fn group_group_by_url() {
       group_index: 0,
       row_count: 2,
     },
-    // https://appflowy.io
+    // https://avantday.io
     AssertGroupRowCount {
       group_index: 1,
       row_count: 2,
     },
-    // https://github.com/AppFlowy-IO/AppFlowy
+    // https://github.com/Avantday-IO/Avantday
     AssertGroupRowCount {
       group_index: 2,
       row_count: 1,
@@ -42,12 +42,12 @@ async fn group_alter_url_to_another_group_url_test() {
       group_index: 0,
       row_count: 2,
     },
-    // https://appflowy.io
+    // https://avantday.io
     AssertGroupRowCount {
       group_index: 1,
       row_count: 2,
     },
-    // https://github.com/AppFlowy-IO/AppFlowy
+    // https://github.com/Avantday-IO/Avantday
     AssertGroupRowCount {
       group_index: 2,
       row_count: 1,
@@ -75,19 +75,19 @@ async fn group_alter_url_to_new_url_test() {
     UpdateGroupedCellWithData {
       from_group_index: 0,
       row_index: 0,
-      cell_data: "https://github.com/AppFlowy-IO".to_string(),
+      cell_data: "https://github.com/Avantday-IO".to_string(),
     },
     // no status group
     AssertGroupRowCount {
       group_index: 0,
       row_count: 1,
     },
-    // https://appflowy.io
+    // https://avantday.io
     AssertGroupRowCount {
       group_index: 1,
       row_count: 2,
     },
-    // https://github.com/AppFlowy-IO/AppFlowy
+    // https://github.com/Avantday-IO/Avantday
     AssertGroupRowCount {
       group_index: 2,
       row_count: 1,
@@ -114,12 +114,12 @@ async fn group_move_url_group_row_test() {
       group_index: 0,
       row_count: 2,
     },
-    // https://appflowy.io
+    // https://avantday.io
     AssertGroupRowCount {
       group_index: 1,
       row_count: 2,
     },
-    // https://github.com/AppFlowy-IO/AppFlowy
+    // https://github.com/Avantday-IO/Avantday
     AssertGroupRowCount {
       group_index: 2,
       row_count: 1,

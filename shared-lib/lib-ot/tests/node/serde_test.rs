@@ -52,7 +52,7 @@ fn operation_update_node_attributes_serde_test() {
 #[test]
 fn operation_update_node_body_serialize_test() {
   let delta = DeltaTextOperationBuilder::new()
-    .insert("AppFlowy...")
+    .insert("Avantday...")
     .build();
   let inverted = delta.invert_str("");
   let changeset = Changeset::Delta { delta, inverted };
@@ -63,13 +63,13 @@ fn operation_update_node_body_serialize_test() {
   let result = serde_json::to_string(&insert).unwrap();
   assert_eq!(
     result,
-    r#"{"op":"update","path":[0,1],"changeset":{"delta":{"delta":[{"insert":"AppFlowy..."}],"inverted":[{"delete":11}]}}}"#
+    r#"{"op":"update","path":[0,1],"changeset":{"delta":{"delta":[{"insert":"Avantday..."}],"inverted":[{"delete":11}]}}}"#
   );
 }
 
 #[test]
 fn operation_update_node_body_deserialize_test() {
-  let json_1 = r#"{"op":"update","path":[0,1],"changeset":{"delta":{"delta":[{"insert":"AppFlowy..."}],"inverted":[{"delete":11}]}}}"#;
+  let json_1 = r#"{"op":"update","path":[0,1],"changeset":{"delta":{"delta":[{"insert":"Avantday..."}],"inverted":[{"delete":11}]}}}"#;
   let operation: NodeOperation = serde_json::from_str(json_1).unwrap();
   let json_2 = serde_json::to_string(&operation).unwrap();
   assert_eq!(json_1, json_2);
@@ -141,11 +141,11 @@ const TREE_JSON: &str = r#"{
           {
             "insert": "Welcome to ",
             "attributes": {
-              "href": "appflowy.io"
+              "href": "avantday.io"
             }
           },
           {
-            "insert": "AppFlowy Editor",
+            "insert": "Avantday Editor",
             "attributes": {
               "italic": true
             }

@@ -350,7 +350,7 @@ fn sequence() {
   let mut delta = DeltaTextOperations::default();
   delta.retain(5, AttributeHashMap::default());
   delta.retain(0, AttributeHashMap::default());
-  delta.insert("appflowy", AttributeHashMap::default());
+  delta.insert("avantday", AttributeHashMap::default());
   delta.insert("", AttributeHashMap::default());
   delta.delete(3);
   delta.delete(0);
@@ -373,12 +373,12 @@ fn apply_test() {
   let delta_a = DeltaBuilder::new().insert(s).build();
   let delta_b = DeltaBuilder::new()
     .retain(s.len())
-    .insert(", AppFlowy")
+    .insert(", Avantday")
     .build();
 
   let after_a = delta_a.content().unwrap();
   let after_b = delta_b.apply(&after_a).unwrap();
-  assert_eq!("hello, AppFlowy", &after_b);
+  assert_eq!("hello, Avantday", &after_b);
 }
 
 #[test]

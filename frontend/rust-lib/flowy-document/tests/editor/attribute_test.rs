@@ -453,10 +453,10 @@ fn attributes_header_insert_double_newline_at_trailing() {
 fn attributes_link_added() {
     let ops = vec![
         Insert(0, "123456", 0),
-        Link(0, Interval::new(0, 6), "https://appflowy.io"),
+        Link(0, Interval::new(0, 6), "https://avantday.io"),
         AssertDocJson(
             0,
-            r#"[{"insert":"123456","attributes":{"link":"https://appflowy.io"}},{"insert":"\n"}]"#,
+            r#"[{"insert":"123456","attributes":{"link":"https://avantday.io"}},{"insert":"\n"}]"#,
         ),
     ];
 
@@ -467,13 +467,13 @@ fn attributes_link_added() {
 fn attributes_link_format_with_bold() {
     let ops = vec![
         Insert(0, "123456", 0),
-        Link(0, Interval::new(0, 6), "https://appflowy.io"),
+        Link(0, Interval::new(0, 6), "https://avantday.io"),
         Bold(0, Interval::new(0, 3), true),
         AssertDocJson(
             0,
             r#"[
-            {"insert":"123","attributes":{"bold":true,"link":"https://appflowy.io"}},
-            {"insert":"456","attributes":{"link":"https://appflowy.io"}},
+            {"insert":"123","attributes":{"bold":true,"link":"https://avantday.io"}},
+            {"insert":"456","attributes":{"link":"https://avantday.io"}},
             {"insert":"\n"}]
             "#,
         ),
@@ -486,15 +486,15 @@ fn attributes_link_format_with_bold() {
 fn attributes_link_insert_char_at_head() {
     let ops = vec![
         Insert(0, "123456", 0),
-        Link(0, Interval::new(0, 6), "https://appflowy.io"),
+        Link(0, Interval::new(0, 6), "https://avantday.io"),
         AssertDocJson(
             0,
-            r#"[{"insert":"123456","attributes":{"link":"https://appflowy.io"}},{"insert":"\n"}]"#,
+            r#"[{"insert":"123456","attributes":{"link":"https://avantday.io"}},{"insert":"\n"}]"#,
         ),
         Insert(0, "a", 0),
         AssertDocJson(
             0,
-            r#"[{"insert":"a"},{"insert":"123456","attributes":{"link":"https://appflowy.io"}},{"insert":"\n"}]"#,
+            r#"[{"insert":"a"},{"insert":"123456","attributes":{"link":"https://avantday.io"}},{"insert":"\n"}]"#,
         ),
     ];
 
@@ -505,11 +505,11 @@ fn attributes_link_insert_char_at_head() {
 fn attributes_link_insert_char_at_middle() {
     let ops = vec![
         Insert(0, "1256", 0),
-        Link(0, Interval::new(0, 4), "https://appflowy.io"),
+        Link(0, Interval::new(0, 4), "https://avantday.io"),
         Insert(0, "34", 2),
         AssertDocJson(
             0,
-            r#"[{"insert":"123456","attributes":{"link":"https://appflowy.io"}},{"insert":"\n"}]"#,
+            r#"[{"insert":"123456","attributes":{"link":"https://avantday.io"}},{"insert":"\n"}]"#,
         ),
     ];
 
@@ -520,15 +520,15 @@ fn attributes_link_insert_char_at_middle() {
 fn attributes_link_insert_char_at_trailing() {
     let ops = vec![
         Insert(0, "123456", 0),
-        Link(0, Interval::new(0, 6), "https://appflowy.io"),
+        Link(0, Interval::new(0, 6), "https://avantday.io"),
         AssertDocJson(
             0,
-            r#"[{"insert":"123456","attributes":{"link":"https://appflowy.io"}},{"insert":"\n"}]"#,
+            r#"[{"insert":"123456","attributes":{"link":"https://avantday.io"}},{"insert":"\n"}]"#,
         ),
         Insert(0, "a", 6),
         AssertDocJson(
             0,
-            r#"[{"insert":"123456","attributes":{"link":"https://appflowy.io"}},{"insert":"a\n"}]"#,
+            r#"[{"insert":"123456","attributes":{"link":"https://avantday.io"}},{"insert":"a\n"}]"#,
         ),
     ];
 
@@ -539,11 +539,11 @@ fn attributes_link_insert_char_at_trailing() {
 fn attributes_link_insert_newline_at_middle() {
     let ops = vec![
         Insert(0, "123456", 0),
-        Link(0, Interval::new(0, 6), "https://appflowy.io"),
+        Link(0, Interval::new(0, 6), "https://avantday.io"),
         Insert(0, NEW_LINE, 3),
         AssertDocJson(
             0,
-            r#"[{"insert":"123","attributes":{"link":"https://appflowy.io"}},{"insert":"\n"},{"insert":"456","attributes":{"link":"https://appflowy.io"}},{"insert":"\n"}]"#,
+            r#"[{"insert":"123","attributes":{"link":"https://avantday.io"}},{"insert":"\n"},{"insert":"456","attributes":{"link":"https://avantday.io"}},{"insert":"\n"}]"#,
         ),
     ];
 
@@ -552,14 +552,14 @@ fn attributes_link_insert_newline_at_middle() {
 
 #[test]
 fn attributes_link_auto_format() {
-    let site = "https://appflowy.io";
+    let site = "https://avantday.io";
     let ops = vec![
         Insert(0, site, 0),
-        AssertDocJson(0, r#"[{"insert":"https://appflowy.io\n"}]"#),
+        AssertDocJson(0, r#"[{"insert":"https://avantday.io\n"}]"#),
         Insert(0, WHITESPACE, site.len()),
         AssertDocJson(
             0,
-            r#"[{"insert":"https://appflowy.io","attributes":{"link":"https://appflowy.io/"}},{"insert":" \n"}]"#,
+            r#"[{"insert":"https://avantday.io","attributes":{"link":"https://avantday.io/"}},{"insert":" \n"}]"#,
         ),
     ];
 
@@ -568,14 +568,14 @@ fn attributes_link_auto_format() {
 
 #[test]
 fn attributes_link_auto_format_exist() {
-    let site = "https://appflowy.io";
+    let site = "https://avantday.io";
     let ops = vec![
         Insert(0, site, 0),
         Link(0, Interval::new(0, site.len()), site),
         Insert(0, WHITESPACE, site.len()),
         AssertDocJson(
             0,
-            r#"[{"insert":"https://appflowy.io","attributes":{"link":"https://appflowy.io/"}},{"insert":" \n"}]"#,
+            r#"[{"insert":"https://avantday.io","attributes":{"link":"https://avantday.io/"}},{"insert":" \n"}]"#,
         ),
     ];
 
@@ -584,14 +584,14 @@ fn attributes_link_auto_format_exist() {
 
 #[test]
 fn attributes_link_auto_format_exist2() {
-    let site = "https://appflowy.io";
+    let site = "https://avantday.io";
     let ops = vec![
         Insert(0, site, 0),
         Link(0, Interval::new(0, site.len() / 2), site),
         Insert(0, WHITESPACE, site.len()),
         AssertDocJson(
             0,
-            r#"[{"insert":"https://a","attributes":{"link":"https://appflowy.io"}},{"insert":"ppflowy.io \n"}]"#,
+            r#"[{"insert":"https://a","attributes":{"link":"https://avantday.io"}},{"insert":"ppflowy.io \n"}]"#,
         ),
     ];
 

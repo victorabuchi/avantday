@@ -48,7 +48,7 @@
 		{
 			"label": "AF: Build Appflowy Core_for_android",
 			"type": "shell",
-			"command": "cargo make --profile development-android appflowy-core-dev-android",
+			"command": "cargo make --profile development-android avantday-core-dev-android",
 			"group": "build",
 			"options": {
 				"cwd": "${workspaceFolder}"
@@ -58,13 +58,13 @@
 			"label": "AF: Build Appflowy Core",
 			"type": "shell",
 			"windows": {
-				"command": "cargo make --profile development-windows-x86 appflowy-core-dev"
+				"command": "cargo make --profile development-windows-x86 avantday-core-dev"
 			},
 			"linux": {
-				"command": "cargo make --profile \"development-linux-$(uname -m)\" appflowy-core-dev"
+				"command": "cargo make --profile \"development-linux-$(uname -m)\" avantday-core-dev"
 			},
 			"osx": {
-				"command": "cargo make --profile \"development-mac-$(uname -m)\" appflowy-core-dev"
+				"command": "cargo make --profile \"development-mac-$(uname -m)\" avantday-core-dev"
 			},
 			"group": "build",
 			"options": {
@@ -96,7 +96,7 @@
 			"type": "shell",
 			"command": "flutter clean",
 			"options": {
-				"cwd": "${workspaceFolder}/appflowy_flutter"
+				"cwd": "${workspaceFolder}/avantday_flutter"
 			}
 		},
 		{
@@ -104,7 +104,7 @@
 			"type": "shell",
 			"command": "flutter pub get",
 			"options": {
-				"cwd": "${workspaceFolder}/appflowy_flutter"
+				"cwd": "${workspaceFolder}/avantday_flutter"
 			}
 		},
 		{
@@ -112,7 +112,7 @@
 			"type": "shell",
 			"command": "flutter packages pub get",
 			"options": {
-				"cwd": "${workspaceFolder}/appflowy_flutter"
+				"cwd": "${workspaceFolder}/avantday_flutter"
 			}
 		},
 		{
@@ -120,7 +120,7 @@
 			"type": "shell",
 			"command": "flutter pub run build_runner build --delete-conflicting-outputs",
 			"options": {
-				"cwd": "${workspaceFolder}/appflowy_flutter"
+				"cwd": "${workspaceFolder}/avantday_flutter"
 			}
 		},
 		{
@@ -163,7 +163,7 @@
 			],
 			"group": "build",
 			"problemMatcher": [],
-			"detail": "appflowy_flutter"
+			"detail": "avantday_flutter"
 		},
 		{
 			"label": "AF: Tauri UI Dev",
@@ -172,7 +172,7 @@
 			"command": "yarn",
 			"args": ["dev"],
 			"options": {
-				"cwd": "${workspaceFolder}/appflowy_tauri"
+				"cwd": "${workspaceFolder}/avantday_tauri"
 			}
 		},
 		{
@@ -180,7 +180,7 @@
 			"type": "shell",
 			"command": "npm run build",
 			"options": {
-				"cwd": "${workspaceFolder}/appflowy_tauri"
+				"cwd": "${workspaceFolder}/avantday_tauri"
 			}
 		},
 		{
@@ -188,7 +188,7 @@
 			"type": "shell",
 			"command": "npm run tauri:dev",
 			"options": {
-				"cwd": "${workspaceFolder}/appflowy_tauri"
+				"cwd": "${workspaceFolder}/avantday_tauri"
 			}
 		},
 		{
@@ -216,7 +216,7 @@
 			"type": "shell",
 			"command": "npx eslint --fix src",
 			"options": {
-				"cwd": "${workspaceFolder}/appflowy_tauri"
+				"cwd": "${workspaceFolder}/avantday_tauri"
 			}
 		},	
 	]

@@ -10,12 +10,12 @@ condition = { env_set = [
   "stable",
 ] }
 
-[tasks.appflowy-core-dev]
-mac_alias = "appflowy-core-dev-macos"
-windows_alias = "appflowy-core-dev-windows"
-linux_alias = "appflowy-core-dev-linux"
+[tasks.avantday-core-dev]
+mac_alias = "avantday-core-dev-macos"
+windows_alias = "avantday-core-dev-windows"
+linux_alias = "avantday-core-dev-linux"
 
-[tasks.appflowy-core-dev-android]
+[tasks.avantday-core-dev-android]
 category = "Build"
 dependencies = ["env_check"]
 run_task = { name = [
@@ -24,7 +24,7 @@ run_task = { name = [
   "restore-crate-type",
 ] }
 
-[tasks.appflowy-core-dev-macos]
+[tasks.avantday-core-dev-macos]
 category = "Build"
 dependencies = ["env_check"]
 run_task = { name = [
@@ -34,7 +34,7 @@ run_task = { name = [
   "restore-crate-type",
 ] }
 
-[tasks.appflowy-core-dev-windows]
+[tasks.avantday-core-dev-windows]
 category = "Build"
 dependencies = ["env_check"]
 run_task = { name = [
@@ -44,7 +44,7 @@ run_task = { name = [
   "restore-crate-type",
 ] }
 
-[tasks.appflowy-core-dev-linux]
+[tasks.avantday-core-dev-linux]
 category = "Build"
 dependencies = ["env_check"]
 run_task = { name = [
@@ -78,7 +78,7 @@ script = [
       armv7-linux-androideabi \
       i686-linux-android \
       x86_64-linux-android
-    DEST=${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/appflowy_flutter/android/app/src/main/jniLibs
+    DEST=${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/avantday_flutter/android/app/src/main/jniLibs
     rm -rf $DEST/arm64-v8a \
       $DEST/armeabi-v7a \
       $DEST/x86 \
@@ -106,7 +106,7 @@ script = [
 script_runner = "@duckscript"
 
 #
-[tasks.appflowy-core-release]
+[tasks.avantday-core-release]
 description = "Build flowy sdk in release mode"
 category = "Build"
 dependencies = ["env_check"]
@@ -138,8 +138,8 @@ linux_alias = "post-desktop-linux"
 private = true
 script = [
   """
-    echo "🚀 🚀 🚀  AppFlowy-Core build success"
-    dart_ffi_dir= set ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/appflowy_flutter/packages/appflowy_backend/${TARGET_OS}
+    echo "🚀 🚀 🚀  Avantday-Core build success"
+    dart_ffi_dir= set ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/avantday_flutter/packages/avantday_backend/${TARGET_OS}
     lib = set lib${LIB_NAME}.${LIB_EXT}
 
     cp ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/rust-lib/target/${RUST_COMPILE_TARGET}/${BUILD_FLAG}/${lib} \
@@ -155,8 +155,8 @@ script_runner = "@duckscript"
 private = true
 script = [
   """
-    echo "🚀 🚀 🚀  AppFlowy-Core build success"
-    dart_ffi_dir= set ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/appflowy_flutter/windows/flutter/dart_ffi
+    echo "🚀 🚀 🚀  Avantday-Core build success"
+    dart_ffi_dir= set ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/avantday_flutter/windows/flutter/dart_ffi
     lib = set ${LIB_NAME}.${LIB_EXT}
 
     # copy dll
@@ -174,8 +174,8 @@ script_runner = "@duckscript"
 private = true
 script = [
   """
-    echo "🚀 🚀 🚀  AppFlowy-Core build success"
-    dart_ffi_dir= set ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/appflowy_flutter/linux/flutter/dart_ffi
+    echo "🚀 🚀 🚀  Avantday-Core build success"
+    dart_ffi_dir= set ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/avantday_flutter/linux/flutter/dart_ffi
     lib = set lib${LIB_NAME}.${LIB_EXT}
 
     # copy dll
@@ -239,9 +239,9 @@ linux_alias = "copy-to-sandbox-folder-default"
 private = true
 script = [
   """
-    # Copy the appflowy_backend lib to system temp directory for flutter unit test.
+    # Copy the avantday_backend lib to system temp directory for flutter unit test.
     lib = set ${LIB_NAME}.${TEST_LIB_EXT}
-    dest = set ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/appflowy_flutter/.sandbox/${lib}
+    dest = set ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/avantday_flutter/.sandbox/${lib}
     rm ${dest}
     cp ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/rust-lib/target/${TEST_COMPILE_TARGET}/${TEST_BUILD_FLAG}/${lib} \
     ${dest}
@@ -253,9 +253,9 @@ script_runner = "@duckscript"
 private = true
 script = [
   """
-    # Copy the appflowy_backend lib to system temp directory for flutter unit test.
+    # Copy the avantday_backend lib to system temp directory for flutter unit test.
     lib = set lib${LIB_NAME}.${TEST_LIB_EXT}
-    dest = set ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/appflowy_flutter/.sandbox/${lib}
+    dest = set ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/avantday_flutter/.sandbox/${lib}
     rm ${dest}
     cp ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}/rust-lib/target/${TEST_COMPILE_TARGET}/${TEST_BUILD_FLAG}/${lib} \
     ${dest}

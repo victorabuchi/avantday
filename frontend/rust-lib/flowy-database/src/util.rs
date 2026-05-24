@@ -156,7 +156,7 @@ pub fn make_default_board_2() -> BuildDatabaseContext {
     row_builder.insert_select_option_cell(&single_select_field_id, vec![to_do_option.id.clone()]);
     match i {
       0 => {
-        row_builder.insert_text_cell(&text_field_id, "Update AppFlowy Website".to_string());
+        row_builder.insert_text_cell(&text_field_id, "Update Avantday Website".to_string());
         row_builder.insert_select_option_cell(&multi_select_field_id, vec![work_option.id.clone()]);
       },
       1 => {

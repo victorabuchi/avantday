@@ -1,4 +1,4 @@
-use crate::editor::{initial_document_content, AppFlowyDocumentEditor, DocumentRevisionMergeable};
+use crate::editor::{initial_document_content, AvantdayDocumentEditor, DocumentRevisionMergeable};
 use crate::entities::{DocumentVersionPB, EditParams};
 use crate::old_editor::editor::{DeltaDocumentEditor, DeltaDocumentRevisionMergeable};
 use crate::old_editor::snapshot::DeltaDocumentSnapshotPersistence;
@@ -256,7 +256,7 @@ impl DocumentManager {
       DocumentVersionPB::V1 => {
         let rev_manager = self.make_document_rev_manager(doc_id, pool.clone())?;
         let editor: Arc<dyn DocumentEditor> =
-          Arc::new(AppFlowyDocumentEditor::new(doc_id, user, rev_manager, cloud_service).await?);
+          Arc::new(AvantdayDocumentEditor::new(doc_id, user, rev_manager, cloud_service).await?);
         self
           .editor_map
           .write()

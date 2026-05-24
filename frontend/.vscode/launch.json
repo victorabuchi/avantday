@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            // This task builds the Rust and Dart code of AppFlowy.
+            // This task builds the Rust and Dart code of Avantday.
             "name": "AF-desktop: Build All",
             "request": "launch",
             "program": "./lib/main.dart",
@@ -15,10 +15,10 @@
                 // "RUST_LOG": "trace",
                 "RUST_LOG": "debug"
             },
-            "cwd": "${workspaceRoot}/appflowy_flutter"
+            "cwd": "${workspaceRoot}/avantday_flutter"
         },
         {
-            //  This task only builds the Dart code of AppFlowy.
+            //  This task only builds the Dart code of Avantday.
             "name": "AF-desktop: Build Dart Only",
             "request": "launch",
             "program": "./lib/main.dart",
@@ -26,13 +26,13 @@
             "env": {
                 "RUST_LOG": "debug"
             },
-            "cwd": "${workspaceRoot}/appflowy_flutter"
+            "cwd": "${workspaceRoot}/avantday_flutter"
         },
         {
             // This task builds will:
             // - call the clean task,
             // - rebuild all the generated Files (including freeze and language files)
-            // - rebuild the the Rust and Dart code of AppFlowy.
+            // - rebuild the the Rust and Dart code of Avantday.
             "name": "AF-desktop: Clean + Rebuild All",
             "request": "launch",
             "program": "./lib/main.dart",
@@ -41,7 +41,7 @@
             "env": {
                 "RUST_LOG": "trace"
             },
-            "cwd": "${workspaceRoot}/appflowy_flutter"
+            "cwd": "${workspaceRoot}/avantday_flutter"
         },
         {
             "name": "AF-desktop: Debug Rust",
@@ -55,10 +55,10 @@
         //     "program": "./lib/main.dart",
         //     "type": "dart",
         //     "flutterMode": "profile",
-        //     "cwd": "${workspaceRoot}/appflowy_flutter"
+        //     "cwd": "${workspaceRoot}/avantday_flutter"
         // },
         {
-            // This task builds the Rust and Dart code of AppFlowy for android.
+            // This task builds the Rust and Dart code of Avantday for android.
             "name": "AF-android: Build All",
             "request": "launch",
             "program": "./lib/main.dart",
@@ -67,13 +67,13 @@
             "env": {
                 "RUST_LOG": "info"
             },
-            "cwd": "${workspaceRoot}/appflowy_flutter"
+            "cwd": "${workspaceRoot}/avantday_flutter"
         },
         {
             // This task builds will:
             // - call the clean task,
             // - rebuild all the generated Files (including freeze and language files)
-            // - rebuild the the Rust and Dart code of AppFlowy.
+            // - rebuild the the Rust and Dart code of Avantday.
             "name": "AF-android: Clean + Rebuild All",
             "request": "launch",
             "program": "./lib/main.dart",
@@ -82,7 +82,7 @@
             "env": {
                 "RUST_LOG": "info"
             },
-            "cwd": "${workspaceRoot}/appflowy_flutter"
+            "cwd": "${workspaceRoot}/avantday_flutter"
         },
         {
             // https://tauri.app/v1/guides/debugging/vs-code
@@ -92,22 +92,22 @@
             "cargo": {
                 "args": [
                     "build",
-                    "--manifest-path=./appflowy_tauri/src-tauri/Cargo.toml",
+                    "--manifest-path=./avantday_tauri/src-tauri/Cargo.toml",
                     "--no-default-features"
                 ]
             },
             "preLaunchTask": "AF: Tauri UI Dev",
-            "cwd": "${workspaceRoot}/appflowy_tauri/"
+            "cwd": "${workspaceRoot}/avantday_tauri/"
         },
         // {
         //     "type": "lldb",
         //     "request": "launch",
         //     "name": "AF-tauri: Production Debug",
         //     "cargo": {
-        //         "args": ["build", "--release", "--manifest-path=./appflowy_tauri/src-tauri/Cargo.toml"]
+        //         "args": ["build", "--release", "--manifest-path=./avantday_tauri/src-tauri/Cargo.toml"]
         //     },
         //     "preLaunchTask": "AF: Tauri UI Build",
-        //     "cwd": "${workspaceRoot}/appflowy_tauri/"
+        //     "cwd": "${workspaceRoot}/avantday_tauri/"
         // },
     ]
 }

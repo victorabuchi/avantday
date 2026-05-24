@@ -26,22 +26,22 @@ mod tests {
   fn text_filter_equal_test() {
     let text_filter = TextFilterPB {
       condition: TextFilterConditionPB::Is,
-      content: "appflowy".to_owned(),
+      content: "avantday".to_owned(),
     };
 
-    assert!(text_filter.is_visible("AppFlowy"));
-    assert_eq!(text_filter.is_visible("appflowy"), true);
+    assert!(text_filter.is_visible("Avantday"));
+    assert_eq!(text_filter.is_visible("avantday"), true);
     assert_eq!(text_filter.is_visible("Appflowy"), true);
-    assert_eq!(text_filter.is_visible("AppFlowy.io"), false);
+    assert_eq!(text_filter.is_visible("Avantday.io"), false);
   }
   #[test]
   fn text_filter_start_with_test() {
     let text_filter = TextFilterPB {
       condition: TextFilterConditionPB::StartsWith,
-      content: "appflowy".to_owned(),
+      content: "avantday".to_owned(),
     };
 
-    assert_eq!(text_filter.is_visible("AppFlowy.io"), true);
+    assert_eq!(text_filter.is_visible("Avantday.io"), true);
     assert_eq!(text_filter.is_visible(""), false);
     assert_eq!(text_filter.is_visible("https"), false);
   }
@@ -50,18 +50,18 @@ mod tests {
   fn text_filter_end_with_test() {
     let text_filter = TextFilterPB {
       condition: TextFilterConditionPB::EndsWith,
-      content: "appflowy".to_owned(),
+      content: "avantday".to_owned(),
     };
 
-    assert_eq!(text_filter.is_visible("https://github.com/appflowy"), true);
+    assert_eq!(text_filter.is_visible("https://github.com/avantday"), true);
     assert_eq!(text_filter.is_visible("App"), false);
-    assert_eq!(text_filter.is_visible("appflowy.io"), false);
+    assert_eq!(text_filter.is_visible("avantday.io"), false);
   }
   #[test]
   fn text_filter_empty_test() {
     let text_filter = TextFilterPB {
       condition: TextFilterConditionPB::TextIsEmpty,
-      content: "appflowy".to_owned(),
+      content: "avantday".to_owned(),
     };
 
     assert_eq!(text_filter.is_visible(""), true);
@@ -71,11 +71,11 @@ mod tests {
   fn text_filter_contain_test() {
     let text_filter = TextFilterPB {
       condition: TextFilterConditionPB::Contains,
-      content: "appflowy".to_owned(),
+      content: "avantday".to_owned(),
     };
 
-    assert_eq!(text_filter.is_visible("https://github.com/appflowy"), true);
-    assert_eq!(text_filter.is_visible("AppFlowy"), true);
+    assert_eq!(text_filter.is_visible("https://github.com/avantday"), true);
+    assert_eq!(text_filter.is_visible("Avantday"), true);
     assert_eq!(text_filter.is_visible("App"), false);
     assert_eq!(text_filter.is_visible(""), false);
     assert_eq!(text_filter.is_visible("github"), false);

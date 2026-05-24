@@ -11,9 +11,9 @@ use crate::core::delta::{trim, DeltaOperations};
 /// ```
 /// use lib_ot::core::DeltaBuilder;
 /// let delta = DeltaBuilder::new()
-///         .insert("AppFlowy")
+///         .insert("Avantday")
 ///         .build();
-/// assert_eq!(delta.content().unwrap(), "AppFlowy");
+/// assert_eq!(delta.content().unwrap(), "Avantday");
 /// ```
 pub struct DeltaOperationBuilder<T: OperationAttributes> {
   delta: DeltaOperations<T>,
@@ -77,7 +77,7 @@ where
   /// use lib_ot::core::{OperationTransform, DeltaBuilder};
   ///
   /// let delta = DeltaBuilder::new()
-  ///         .insert("AppFlowy...")
+  ///         .insert("Avantday...")
   ///         .build();
   ///
   /// let changeset = DeltaBuilder::new()
@@ -86,7 +86,7 @@ where
   ///         .build();
   ///
   /// let new_delta = delta.compose(&changeset).unwrap();
-  /// assert_eq!(new_delta.content().unwrap(), "AppFlowy");
+  /// assert_eq!(new_delta.content().unwrap(), "Avantday");
   /// ```
   pub fn delete(mut self, n: usize) -> Self {
     self.delta.delete(n);

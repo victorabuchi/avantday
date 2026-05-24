@@ -88,7 +88,7 @@ pub trait OperationAttributes:
 /// * Retain
 /// * Insert
 ///
-/// You could check [this](https://appflowy.gitbook.io/docs/essential-documentation/contribute-to-appflowy/architecture/backend/delta) out for more information.
+/// You could check [this](https://avantday.gitbook.io/docs/essential-documentation/contribute-to-avantday/architecture/backend/delta) out for more information.
 ///
 /// The [T] should support serde if you want to serialize/deserialize the operation
 /// to json string. You could check out the operation_serde.rs for more information.

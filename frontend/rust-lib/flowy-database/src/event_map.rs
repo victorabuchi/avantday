@@ -58,7 +58,7 @@ pub fn init(database_manager: Arc<DatabaseManager>) -> AFPlugin {
   plugin
 }
 
-/// [DatabaseEvent] defines events that are used to interact with the Grid. You could check [this](https://appflowy.gitbook.io/docs/essential-documentation/contribute-to-appflowy/architecture/backend/protobuf)
+/// [DatabaseEvent] defines events that are used to interact with the Grid. You could check [this](https://avantday.gitbook.io/docs/essential-documentation/contribute-to-avantday/architecture/backend/protobuf)
 /// out, it includes how to use these annotations: input, output, etc.
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Display, Hash, ProtoBuf_Enum, Flowy_Event)]
 #[event_err = "FlowyError"]
@@ -110,7 +110,7 @@ pub enum DatabaseEvent {
   /// for a multi-select list. These options are defined within a specialization of the
   /// FieldTypeOption class.
   ///
-  /// Check out [this](https://appflowy.gitbook.io/docs/essential-documentation/contribute-to-appflowy/architecture/frontend/grid#fieldtype)
+  /// Check out [this](https://avantday.gitbook.io/docs/essential-documentation/contribute-to-avantday/architecture/frontend/grid#fieldtype)
   /// for more information.
   ///
   /// The event handler accepts a [TypeOptionChangesetPB] and returns errors if failed to modify the

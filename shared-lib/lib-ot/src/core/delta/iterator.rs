@@ -11,7 +11,7 @@ pub(crate) const MAX_IV_LEN: usize = i32::MAX as usize;
 /// [OperationIterator] is used to iterate over the operations.
 /// # Examples
 ///
-/// You could check [this](https://appflowy.gitbook.io/docs/essential-documentation/contribute-to-appflowy/architecture/backend/delta) out for more information.
+/// You could check [this](https://avantday.gitbook.io/docs/essential-documentation/contribute-to-avantday/architecture/backend/delta) out for more information.
 ///
 /// ```
 ///  use lib_ot::core::{OperationIterator, Interval, DeltaOperation};

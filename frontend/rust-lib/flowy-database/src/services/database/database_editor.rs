@@ -310,7 +310,7 @@ impl DatabaseEditor {
   /// Switch the field with id to a new field type.  
   ///
   /// If the field type is not exist before, the default type-option data will be created.
-  /// Each field type has its corresponding data, aka, the type-option data. Check out [this](https://appflowy.gitbook.io/docs/essential-documentation/contribute-to-appflowy/architecture/frontend/grid#fieldtype)
+  /// Each field type has its corresponding data, aka, the type-option data. Check out [this](https://avantday.gitbook.io/docs/essential-documentation/contribute-to-avantday/architecture/frontend/grid#fieldtype)
   /// for more information
   ///
   /// # Arguments

@@ -92,10 +92,10 @@ mod tests {
 
     #[test]
     fn markdown_encoder_link_test() {
-        let json = r#"[{"insert":"appflowy","attributes":{"link":"https://www.appflowy.io/"}},{"insert":"\n"}]"#;
+        let json = r#"[{"insert":"avantday","attributes":{"link":"https://www.avantday.io/"}},{"insert":"\n"}]"#;
         let delta = TextDelta::from_json(json).unwrap();
         let md = markdown_encoder(&delta);
-        assert_eq!(md, "[appflowy](https://www.appflowy.io/)\n");
+        assert_eq!(md, "[avantday](https://www.avantday.io/)\n");
     }
 }
 

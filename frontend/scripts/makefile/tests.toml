@@ -22,7 +22,7 @@ env = { RUST_LOG = "info" }
 dependencies = ["build_test_backend"]
 description = "Run flutter unit tests"
 script = '''
-cd appflowy_flutter
+cd avantday_flutter
 flutter test --dart-define=RUST_LOG=${RUST_LOG} -j, --concurrency=1
 '''
 
@@ -207,7 +207,7 @@ run_task = { name = [
 description = "Run rust unit test with code coverage"
 run_task = { name = [
   "check_grcov",
-  'appflowy-flutter-deps-tools',
+  'avantday-flutter-deps-tools',
   "run_rustlib_coverage_tests",
   "run_sharedlib_coverage_tests",
   "get_lcov_report",

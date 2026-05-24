@@ -271,17 +271,17 @@ fn history_header_added_undo() {
 
 #[test]
 fn history_link_added_undo() {
-  let site = "https://appflowy.io";
+  let site = "https://avantday.io";
   let ops = vec![
     Insert(0, site, 0),
     Wait(RECORD_THRESHOLD),
     Link(0, Interval::new(0, site.len()), site),
     Undo(0),
-    AssertDocJson(0, r#"[{"insert":"https://appflowy.io\n"}]"#),
+    AssertDocJson(0, r#"[{"insert":"https://avantday.io\n"}]"#),
     Redo(0),
     AssertDocJson(
       0,
-      r#"[{"insert":"https://appflowy.io","attributes":{"link":"https://appflowy.io"}},{"insert":"\n"}]"#,
+      r#"[{"insert":"https://avantday.io","attributes":{"link":"https://avantday.io"}},{"insert":"\n"}]"#,
     ),
   ];
 
@@ -290,18 +290,18 @@ fn history_link_added_undo() {
 
 #[test]
 fn history_link_auto_format_undo_with_lagging() {
-  let site = "https://appflowy.io";
+  let site = "https://avantday.io";
   let ops = vec![
     Insert(0, site, 0),
-    AssertDocJson(0, r#"[{"insert":"https://appflowy.io\n"}]"#),
+    AssertDocJson(0, r#"[{"insert":"https://avantday.io\n"}]"#),
     Wait(RECORD_THRESHOLD),
     Insert(0, WHITESPACE, site.len()),
     AssertDocJson(
       0,
-      r#"[{"insert":"https://appflowy.io","attributes":{"link":"https://appflowy.io/"}},{"insert":" \n"}]"#,
+      r#"[{"insert":"https://avantday.io","attributes":{"link":"https://avantday.io/"}},{"insert":" \n"}]"#,
     ),
     Undo(0),
-    AssertDocJson(0, r#"[{"insert":"https://appflowy.io\n"}]"#),
+    AssertDocJson(0, r#"[{"insert":"https://avantday.io\n"}]"#),
   ];
 
   TestBuilder::new().run_scripts::<NewlineDocument>(ops);

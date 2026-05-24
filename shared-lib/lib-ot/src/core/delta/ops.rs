@@ -22,7 +22,7 @@ pub type DeltaBuilder = DeltaOperationBuilder<EmptyAttributes>;
 /// Check out the [Operation] for more details. It describes the document as a sequence of
 /// operations.
 ///
-/// You could check [this](https://appflowy.gitbook.io/docs/essential-documentation/contribute-to-appflowy/architecture/backend/delta) out for more information.
+/// You could check [this](https://avantday.gitbook.io/docs/essential-documentation/contribute-to-avantday/architecture/backend/delta) out for more information.
 ///
 /// If the [T] supports 'serde', that will enable delta to serialize to JSON or deserialize from
 /// a JSON string.
@@ -187,12 +187,12 @@ where
   ///  let delta_a = DeltaBuilder::new().insert(s).build();
   ///  let delta_b = DeltaBuilder::new()
   ///         .retain(s.len())
-  ///         .insert(", AppFlowy")
+  ///         .insert(", Avantday")
   ///         .build();
   ///
   ///  let after_a = delta_a.content().unwrap();
   ///  let after_b = delta_b.apply(&after_a).unwrap();
-  ///  assert_eq!("hello, AppFlowy", &after_b);
+  ///  assert_eq!("hello, Avantday", &after_b);
   /// ```
   pub fn apply(&self, applied_str: &str) -> Result<String, OTError> {
     let applied_str: OTString = applied_str.into();

@@ -317,8 +317,8 @@ async fn folder_sync_revision_seq() {
 // #[tokio::test]
 // async fn folder_sync_revision_with_new_app() {
 //     let mut test = FolderTest::new().await;
-//     let app_name = "AppFlowy contributors".to_owned();
-//     let app_desc = "Welcome to be a AppFlowy contributor".to_owned();
+//     let app_name = "Avantday contributors".to_owned();
+//     let app_desc = "Welcome to be a Avantday contributor".to_owned();
 //
 //     test.run_scripts(vec![
 //         AssertNextSyncRevId(Some(1)),
@@ -342,7 +342,7 @@ async fn folder_sync_revision_seq() {
 // #[tokio::test]
 // async fn folder_sync_revision_with_new_view() {
 //     let mut test = FolderTest::new().await;
-//     let view_name = "AppFlowy features".to_owned();
+//     let view_name = "Avantday features".to_owned();
 //     let view_desc = "😁".to_owned();
 //
 //     test.run_scripts(vec![

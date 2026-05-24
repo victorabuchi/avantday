@@ -10,7 +10,7 @@
         },
         "delta": [
           {
-            "insert": "🌟 Welcome to AppFlowy!"
+            "insert": "🌟 Welcome to Avantday!"
           }
         ]
       },
@@ -362,7 +362,7 @@
         },
         "delta": [
           {
-            "insert": "Like AppFlowy? Follow us:"
+            "insert": "Like Avantday? Follow us:"
           }
         ]
       },
@@ -376,7 +376,7 @@
           {
             "insert": "GitHub",
             "attributes": {
-              "href": "https://github.com/AppFlowy-IO/AppFlowy"
+              "href": "https://github.com/Avantday-IO/Avantday"
             }
           }
         ]
@@ -388,7 +388,7 @@
         },
         "delta": [
           {
-            "insert": "Twitter: @appflowy"
+            "insert": "Twitter: @avantday"
           }
         ]
       },
@@ -401,7 +401,7 @@
           {
             "insert": "Newsletter",
             "attributes": {
-              "href": "https://blog-appflowy.ghost.io/"
+              "href": "https://blog-avantday.ghost.io/"
             }
           }
         ]

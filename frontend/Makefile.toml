@@ -25,10 +25,10 @@ CARGO_MAKE_CRATE_NAME = "dart-ffi"
 LIB_NAME = "dart_ffi"
 CURRENT_APP_VERSION = "0.1.0"
 FLUTTER_DESKTOP_FEATURES = "dart,rev-sqlite"
-PRODUCT_NAME = "AppFlowy"
+PRODUCT_NAME = "Avantday"
 # CRATE_TYPE: https://doc.rust-lang.org/reference/linkage.html
 # If you update the macOS's CRATE_TYPE, don't forget to update the
-# appflowy_backend.podspec
+# avantday_backend.podspec
 #   for staticlib:
 #        s.static_framework = true
 #        s.vendored_libraries = "libdart_ffi.a"
@@ -43,8 +43,8 @@ PRODUCT_NAME = "AppFlowy"
 CRATE_TYPE = "staticlib"
 LIB_EXT = "a"
 APP_ENVIRONMENT = "local"
-FLUTTER_FLOWY_SDK_PATH = "appflowy_flutter/packages/appflowy_backend"
-TAURI_BACKEND_SERVICE_PATH = "appflowy_tauri/src/services/backend"
+FLUTTER_FLOWY_SDK_PATH = "avantday_flutter/packages/avantday_backend"
+TAURI_BACKEND_SERVICE_PATH = "avantday_tauri/src/services/backend"
 # Test default config
 TEST_CRATE_TYPE = "cdylib"
 TEST_LIB_EXT = "dylib"

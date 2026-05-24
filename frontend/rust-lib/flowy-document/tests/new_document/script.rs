@@ -1,4 +1,4 @@
-use flowy_document::editor::{AppFlowyDocumentEditor, Document, DocumentTransaction};
+use flowy_document::editor::{AvantdayDocumentEditor, Document, DocumentTransaction};
 
 use flowy_document::entities::DocumentVersionPB;
 use flowy_test::helper::ViewTest;
@@ -36,7 +36,7 @@ pub enum EditScript {
 
 pub struct DocumentEditorTest {
   pub sdk: FlowySDKTest,
-  pub editor: Arc<AppFlowyDocumentEditor>,
+  pub editor: Arc<AvantdayDocumentEditor>,
 }
 
 impl DocumentEditorTest {
@@ -53,7 +53,7 @@ impl DocumentEditorTest {
       .unwrap();
     let editor = match document_editor
       .as_any()
-      .downcast_ref::<Arc<AppFlowyDocumentEditor>>()
+      .downcast_ref::<Arc<AvantdayDocumentEditor>>()
     {
       None => panic!(),
       Some(editor) => editor.clone(),

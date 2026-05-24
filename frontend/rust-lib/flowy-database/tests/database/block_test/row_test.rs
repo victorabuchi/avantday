@@ -73,7 +73,7 @@ async fn grid_row_add_cells_test() {
   builder.insert(FieldType::DateTime, "1647251762", "2022/03/14");
   builder.insert(FieldType::Number, "18,443", "$18,443.00");
   builder.insert(FieldType::Checkbox, "false", UNCHECK);
-  builder.insert(FieldType::URL, "https://appflowy.io", "https://appflowy.io");
+  builder.insert(FieldType::URL, "https://avantday.io", "https://avantday.io");
   builder.insert_single_select_cell(|mut options| options.remove(0), COMPLETED);
   builder.insert_multi_select_cell(
     |options| options,

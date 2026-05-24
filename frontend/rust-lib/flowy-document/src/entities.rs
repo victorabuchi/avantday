@@ -85,7 +85,7 @@ pub enum DocumentVersionPB {
   /// `DeltaDocumentEditor`.
   V0 = 0,
   /// this version's content of the document is build from `NodeTree`. It uses
-  /// `AppFlowyDocumentEditor`
+  /// `AvantdayDocumentEditor`
   V1 = 1,
 }
 

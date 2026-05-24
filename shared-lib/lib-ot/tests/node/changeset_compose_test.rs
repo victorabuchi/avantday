@@ -101,7 +101,7 @@ fn operation_compose_multiple_delta_changeset_then_invert_test() {
   // delta 3
   let delta_3 = DeltaTextOperationBuilder::new()
     .retain(delta_2.utf16_target_len)
-    .insert("AppFlowy")
+    .insert("Avantday")
     .build();
   let inverted_3 = delta_3.inverted();
   let changeset_3 = Changeset::Delta {

@@ -53,10 +53,10 @@ impl std::convert::From<ViewRevision> for ViewPB {
 pub enum ViewDataFormatPB {
   /// Indicate this view is using `Delta` for the persistence data format, it's deprecated.
   DeltaFormat = 0,
-  /// Indicate this view is using `Database` for the persistence data format. It is used in AppFlowy database
+  /// Indicate this view is using `Database` for the persistence data format. It is used in Avantday database
   /// views including Grid,Board, and Calendar.
   DatabaseFormat = 1,
-  /// Indicate this view is using `Node` for the persistence data format. It is used in AppFlowy document
+  /// Indicate this view is using `Node` for the persistence data format. It is used in Avantday document
   NodeFormat = 2,
 }
 

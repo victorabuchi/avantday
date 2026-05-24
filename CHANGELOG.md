@@ -76,7 +76,7 @@
 
 ### New features
 
-- Optimize appflowy_editor dark mode style
+- Optimize avantday_editor dark mode style
 
 ### Bug Fixes
 
@@ -86,7 +86,7 @@
 
 ### New features
 
-- Integrate **appflowy_editor**
+- Integrate **avantday_editor**
 
 ## Version 0.0.5.3 - 09/26/2022
 
@@ -112,7 +112,7 @@
 
 ### Bug Fixes
 
-- Fix cannot open AppFlowy error
+- Fix cannot open Avantday error
 - Fix delete the Kanban board's row error
 
 ## Version 0.0.5.1 - 09/14/2022

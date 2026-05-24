@@ -425,9 +425,9 @@ mod tests {
           { "insert": "👋 " },
           { "insert": "Welcome to ", "attributes": { "bold": true } },
           {
-            "insert": "AppFlowy Editor",
+            "insert": "Avantday Editor",
             "attributes": {
-              "href": "appflowy.io",
+              "href": "avantday.io",
               "italic": true,
               "bold": true
             }
@@ -438,7 +438,7 @@ mod tests {
       {
         "type": "text",
         "delta": [
-          { "insert": "AppFlowy Editor is a " },
+          { "insert": "Avantday Editor is a " },
           { "insert": "highly customizable", "attributes": { "bold": true } },
           { "insert": " " },
           { "insert": "rich-text editor", "attributes": { "italic": true } },
@@ -473,7 +473,7 @@ mod tests {
         "delta": [
           { "insert": "You can also use " },
           {
-            "insert": "AppFlowy Editor",
+            "insert": "Avantday Editor",
             "attributes": {
               "italic": true,
               "bold": true,

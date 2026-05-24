@@ -34,8 +34,8 @@ use user_model::UserProfile;
 static INIT_LOG: AtomicBool = AtomicBool::new(false);
 
 #[derive(Clone)]
-pub struct AppFlowyCoreConfig {
-  /// Different `AppFlowyCoreConfig` instance should have different name
+pub struct AvantdayCoreConfig {
+  /// Different `AvantdayCoreConfig` instance should have different name
   name: String,
   /// Panics if the `root` path is not existing
   storage_path: String,
@@ -44,9 +44,9 @@ pub struct AppFlowyCoreConfig {
   pub document: DocumentConfig,
 }
 
-impl fmt::Debug for AppFlowyCoreConfig {
+impl fmt::Debug for AvantdayCoreConfig {
   fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-    f.debug_struct("AppFlowyCoreConfig")
+    f.debug_struct("AvantdayCoreConfig")
       .field("storage_path", &self.storage_path)
       .field("server-config", &self.server_config)
       .field("document-config", &self.document)
@@ -54,9 +54,9 @@ impl fmt::Debug for AppFlowyCoreConfig {
   }
 }
 
-impl AppFlowyCoreConfig {
+impl AvantdayCoreConfig {
   pub fn new(root: &str, name: String, server_config: ClientServerConfiguration) -> Self {
-    AppFlowyCoreConfig {
+    AvantdayCoreConfig {
       name,
       storage_path: root.to_owned(),
       log_filter: create_log_filter("info".to_owned(), vec![]),
@@ -113,9 +113,9 @@ fn create_log_filter(level: String, with_crates: Vec<String>) -> String {
 }
 
 #[derive(Clone)]
-pub struct AppFlowyCore {
+pub struct AvantdayCore {
   #[allow(dead_code)]
-  pub config: AppFlowyCoreConfig,
+  pub config: AvantdayCoreConfig,
   pub user_session: Arc<UserSession>,
   pub document_manager: Arc<DocumentManager>,
   pub folder_manager: Arc<FolderManager>,
@@ -126,8 +126,8 @@ pub struct AppFlowyCore {
   pub task_dispatcher: Arc<RwLock<TaskDispatcher>>,
 }
 
-impl AppFlowyCore {
-  pub fn new(config: AppFlowyCoreConfig) -> Self {
+impl AvantdayCore {
+  pub fn new(config: AvantdayCoreConfig) -> Self {
     #[cfg(feature = "profiling")]
     console_subscriber::init();
 
@@ -275,18 +275,18 @@ fn init_kv(root: &str) {
   }
 }
 
-fn init_log(config: &AppFlowyCoreConfig) {
+fn init_log(config: &AvantdayCoreConfig) {
   if !INIT_LOG.load(Ordering::SeqCst) {
     INIT_LOG.store(true, Ordering::SeqCst);
 
-    let _ = lib_log::Builder::new("AppFlowy-Client", &config.storage_path)
+    let _ = lib_log::Builder::new("Avantday-Client", &config.storage_path)
       .env_filter(&config.log_filter)
       .build();
   }
 }
 
 fn mk_user_session(
-  config: &AppFlowyCoreConfig,
+  config: &AvantdayCoreConfig,
   local_server: &Option<Arc<LocalServer>>,
   server_config: &ClientServerConfiguration,
 ) -> Arc<UserSession> {
@@ -300,7 +300,7 @@ struct UserStatusListener {
   folder_manager: Arc<FolderManager>,
   database_manager: Arc<DatabaseManager>,
   ws_conn: Arc<FlowyWebSocketConnect>,
-  config: AppFlowyCoreConfig,
+  config: AvantdayCoreConfig,
 }
 
 impl UserStatusListener {

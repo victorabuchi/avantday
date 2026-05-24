@@ -81,7 +81,7 @@ async fn document_update_text_test() {
       path: vec![0, 0].into(),
       delta: DeltaTextOperationBuilder::new()
         .retain(hello_world.len())
-        .insert(", AppFlowy")
+        .insert(", Avantday")
         .build(),
     },
     AssertPrettyContent {
@@ -93,7 +93,7 @@ async fn document_update_text_test() {
         "type": "text",
         "delta": [
           {
-            "insert": "Hello world, AppFlowy"
+            "insert": "Hello world, Avantday"
           }
         ]
       }

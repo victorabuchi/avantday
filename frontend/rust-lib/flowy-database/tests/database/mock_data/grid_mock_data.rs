@@ -121,7 +121,7 @@ pub fn make_test_grid() -> BuildDatabaseContext {
             FieldType::Checklist => row_builder.insert_checklist_cell(|options| options),
             FieldType::Checkbox => row_builder.insert_checkbox_cell("true"),
             FieldType::URL => {
-              row_builder.insert_url_cell("AppFlowy website - https://www.appflowy.io")
+              row_builder.insert_url_cell("Avantday website - https://www.avantday.io")
             },
             _ => "".to_owned(),
           };

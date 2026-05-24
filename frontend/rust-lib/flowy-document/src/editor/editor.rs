@@ -16,14 +16,14 @@ use std::sync::Arc;
 use tokio::sync::{mpsc, oneshot};
 use ws_model::ws_revision::ServerRevisionWSData;
 
-pub struct AppFlowyDocumentEditor {
+pub struct AvantdayDocumentEditor {
   #[allow(dead_code)]
   doc_id: String,
   command_sender: CommandSender,
   rev_manager: Arc<RevisionManager<Arc<ConnectionPool>>>,
 }
 
-impl AppFlowyDocumentEditor {
+impl AvantdayDocumentEditor {
   pub async fn new(
     doc_id: &str,
     user: Arc<dyn DocumentUser>,
@@ -88,7 +88,7 @@ fn spawn_edit_queue(
 }
 
 #[async_trait]
-impl DocumentEditor for Arc<AppFlowyDocumentEditor> {
+impl DocumentEditor for Arc<AvantdayDocumentEditor> {
   #[tracing::instrument(name = "close document editor", level = "trace", skip_all)]
   async fn close(&self) {
     self.rev_manager.generate_snapshot().await;
